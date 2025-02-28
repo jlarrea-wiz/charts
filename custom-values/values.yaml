@@ -1,0 +1,28 @@
+global:
+  wizApiToken:
+    secret:
+      create: false
+      name: wiz-sa
+    
+wiz-kubernetes-connector:
+  enabled: true
+  wiz-broker:
+    enabled: true
+  autoCreateConnector:
+    connectorName: "test-eks-argo"
+    clusterFlavor: "EKS"
+
+wiz-admission-controller:
+  enabled: true
+  opaWebhook:
+    enabled: true
+  kubernetesAuditLogsWebhook:
+    enabled: true
+  webhook:    
+    policyEnforcementMethod: "AUDIT"
+    
+wiz-sensor:
+  enabled: true
+  imagePullSecret:
+    create: false
+    name: sensor-image-pull
